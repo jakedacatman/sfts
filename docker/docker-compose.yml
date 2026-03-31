@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: ../services/backend
+      dockerfile: Dockerfile
+    command: gunicorn --bind 0.0.0.0:5000 manage:app
+    expose:
+      - 5000
+    environment:
+      - FLASK_APP=app/__init__.py
+      - FLASK_DEBUG=0
+  nginx:
+    build: ../services/nginx
+    ports:
+      - 8000:80
+    depends_on:
+      - app
