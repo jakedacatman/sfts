@@ -3,6 +3,6 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/api")
 def test():
     return jsonify(time = str(datetime.now().time()))
