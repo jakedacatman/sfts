@@ -4,3 +4,5 @@
 * Install `docker`, `docker-compose`, and `docker-buildx`
 * In the repository, run `cd docker`, then `docker compose build && docker compose up`
 * Navigate to `localhost:8000`
+
+Uses the dataset from https://www.kaggle.com/datasets/deepu1109/star-dataset
