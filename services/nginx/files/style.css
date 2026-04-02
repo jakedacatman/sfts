@@ -1,0 +1,73 @@
+img {
+    width: 300px;
+    border: 5px solid tan;
+    margin: auto;
+    box-shadow: 0px 10px 20px black;
+}
+h1 {
+    text-align: center;
+    font-family: Lobster;
+}
+
+a {
+    color: firebrick;
+    padding: 5px 5px 5px 5px;
+}
+
+a:hover {
+    color: darkkhaki;
+}
+
+img:hover {
+    
+}
+
+h2 {
+    font-size: 21px;
+    text-align: center;
+}
+
+body {
+    background: url("BackgroundJobs.jpg");
+    
+            /* Background */
+            /* border: 2px soild black;
+            outline-style: outset;
+            outline-color: tan; */
+    
+}
+
+nav ul {
+    padding: 10px;
+    margin: 10 auto;
+}
+
+/* index home */
+.contains {
+    text-align: center;
+
+}
+.info {
+
+}
+img {  max-width: 100%;  height: auto;} 
+
+/* Education home */
+
+
+
+/* adjust page format */
+
+@media(min-width: 760px) {
+    
+    nav ul {
+        /* texted displayed */
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+        list-style-type: none;
+        /* text shown */
+        font-style: italic;
+
+    }
+}
