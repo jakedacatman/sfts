@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from datetime import datetime
 from tensorflow.keras.models import load_model 
 from sklearn.tree import DecisionTreeClassifier
+import numpy as np
 import pickle
 
 app = Flask(__name__)
@@ -23,24 +24,24 @@ classes = {
 
 #mappings for one-hot encoding
 colors = {
-    "Blue": [False, False, False, False, False, False, False],
-    "Blue-White": [True, False, False, False, False, False, False],
-    "Orange": [False, True, False, False, False, False, False],
-    "Orange-Red": [False, False, True, False, False, False, False],
-    "Red": [False, False, False, True, False, False, False],
-    "White": [False, False, False, False, True, False, False],
-    "Yellow": [False, False, False, False, False, True, False],
-    "Yellow-White": [False, False, False, False, False, False, True]
-}
-spectral_classes = { 
-    "A": [False, False, False, False, False, False],
-    "B": [True, False, False, False, False, False],
-    "F": [False, True, False, False, False, False],
-    "G": [False, False, True, False, False, False],
-    "K": [False, False, False, True, False, False],
-    "M": [False, False, False, False, True, False],
-    "O": [False, False, False, False, False, True]
-}
+    "Blue": [0, 0, 0, 0, 0, 0, 0],
+    "Blue-White": [1, 0, 0, 0, 0, 0, 0],
+    "Orange": [0, 1, 0, 0, 0, 0, 0],
+    "Orange-Red": [0, 0, 1, 0, 0, 0, 0],
+    "Red": [0, 0, 0, 1, 0, 0, 0],
+    "White": [0, 0, 0, 0, 1, 0, 0],
+    "Yellow": [0, 0, 0, 0, 0, 1, 0],
+    "Yellow-White": [0, 0, 0, 0, 0, 0, 1]
+} 
+spectral_classes = {
+    "A": [0, 0, 0, 0, 0, 0],
+    "B": [1, 0, 0, 0, 0, 0],
+    "F": [0, 1, 0, 0, 0, 0],
+    "G": [0, 0, 1, 0, 0, 0],
+    "K": [0, 0, 0, 1, 0, 0],
+    "M": [0, 0, 0, 0, 1, 0],
+    "O": [0, 0, 0, 0, 0, 1]
+} 
 
 @app.route("/api")
 def test():
@@ -49,7 +50,10 @@ def test():
 @app.route("/api/identify", methods = ["POST"])
 def identify():
     form = request.form
-    X = [ form["temp"], form["lum"], form["rad"], form["mag"] ]
+    X = [ form["temperature"], form["luminosity"], form["radius"], form["magnitude"] ]
     X.extend(colors[form["color"]])
-    X.extend(spectral_classes[form["spec"]])
+    X.extend(spectral_classes[form["class"]])
+    X = np.array(X)
+    X = X.reshape(1, -1)
+    print(X.shape)
     return jsonify({ "prediction": classes[model_tree.predict(X)[0]] })
