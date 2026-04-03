@@ -16,25 +16,22 @@ run pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requir
 
 from tensorflow/tensorflow:2.21.0
 
-#run addgroup --system app
-#run adduser -S -G app app
-run groupadd -r app
-run useradd -m -r -g app app
-#run apt list python3-blinker
-run apt-get remove -y python3-blinker
+run groupadd -r runner
+run useradd -m -r -g runner runner
+run apt-get remove -y python3-blinker #conflicts with newer version installed by flask
 
-env HOME=/home/app
-env APP_HOME=/home/app/app
+env HOME=/home/runner
+env APP_HOME=/home/runner/app
 run mkdir $APP_HOME
 workdir $APP_HOME
 
-#run apk update && apk add netcat-openbsd
 copy --from=build /usr/src/app/wheels /wheels
 copy --from=build /usr/src/app/requirements.txt .
 run pip install --upgrade pip
 run pip install --no-cache /wheels/*
 
 copy . $APP_HOME
-run chown -R app:app $APP_HOME
+run chown -R runner:runner $APP_HOME
+run ls $APP_HOME
 
-user app
+user runner
