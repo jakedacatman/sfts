@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from datetime import datetime
 from tensorflow.keras.models import load_model 
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.compose import ColumnTransformer
 import numpy as np
 import pickle
 
@@ -12,6 +13,9 @@ with open(f"{prefix}decision_tree.pkl", "rb") as file:
     model_tree = pickle.load(file)
 
 model_nn = load_model(f"{prefix}classification_mlp.keras")
+
+with open(f"{prefix}mlp_processor.pkl", "rb") as file:
+    proc_nn = pickle.load(file)
 
 classes = {
     0: "Brown Dwarf",
