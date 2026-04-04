@@ -18,6 +18,8 @@ model_mlp = load_model(f"{prefix}classification_mlp.keras")
 with open(f"{prefix}mlp_processor.pkl", "rb") as file:
     proc_mlp = pickle.load(file)
 
+descriptions = pd.read_csv("descriptions.csv", sep = "|")
+
 classes = {
     0: "Brown Dwarf",
     1: "Red Dwarf",
@@ -62,7 +64,7 @@ def identify():
         X.extend(spectral_classes[form["class"]])
         X = np.array(X).reshape(1, -1)
         #print(X, X.shape)
-        result = classes[model_tree.predict(X)[0]]
+        result = model_tree.predict(X)[0]
     else:
         X.extend([form["color"]])
         X.append(form["class"])
@@ -82,6 +84,6 @@ def identify():
         )
 
         X = proc_mlp.transform(X)
-        result = classes[np.argmax(model_mlp.predict(X), axis = 1)[0]]
+        result = np.argmax(model_mlp.predict(X), axis = 1)[0]
 
-    return jsonify({ "prediction": result })
+    return jsonify({ "prediction": classes[result], "description": descriptions.iloc[result]["Description"] })
