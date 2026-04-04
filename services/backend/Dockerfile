@@ -1,5 +1,5 @@
 # build
-from tensorflow/tensorflow:2.20.0 as build
+from tensorflow/tensorflow:2.21.0 as build
 
 workdir /usr/src/app
 
