@@ -10,21 +10,177 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 </head>
 
+
+<!-- Beginning -->
+
 <body>
+
+    <!-- Background canvas-->
+    <canvas id="starfield"></canvas>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="clouds"></div>
     
-    <div class="contains">
-        <h1>Welcome to the Website</h1>
+    <!-- Navigation Bar-->
 
+        <nav>
+            <a class="nav-brand" href="#">✦ Shooting for the Stars</a>
+            <ul class="nav-links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#models">Models</a></li>
+              <li><a href="#classes">Star Types</a></li>
+              <li><a href="#data">Dataset</a></li>
+              <li><a href="#timeline">Timeline</a></li>
+              <li><a href="#team">Team</a></li>
+            </ul>
+          </nav>
 
+    <!-- Banner -->
+    <section>
+        <div class="banner">
+            <p class="banner-head">CSC 440 · Software Engineering · Spring 2026</p>
+            <h1>Shooting for<br/>the <em>Stars</em></h1>
+            <p class="banner-sub">A deep learning web application that classifies stars by their observable properties.</p>
+    <div class="banner-btn">
+      <a class="btn btn-primary" href="#models">Explore Models</a>
+      <a class="btn btn-ghost" href="#classes">Star Classifications</a>
     </div>
+    <p class="banner-team">
+        <span>Jacob Canada</span> &nbsp;·&nbsp;
+        <span>Alykaa Salaah</span> &nbsp;·&nbsp;
+        <span>Idalia Martin</span> &nbsp;·&nbsp;
+        <span>Elaina Hall</span>
+      </p>
+    </div>
+    </section>
+
+    <!-- End of Banner -->
+    <div class="divider"></div>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+          <div class="about-grid">
+            <div>
+              <p class="section-label reveal">Project Overview</p>
+              <h2 class="section-title reveal">Deep learning meets<br/><em>ancient science</em></h2>
+              <p class="section-body reveal">
+                Astronomy is one of humanity's oldest pursuits. Yet terms like "main sequence," "white dwarf," and "red giant" 
+                remain opaque to most. This project bridges that gap as users are able to observe stellar parameters and receive a clear and
+                explained classification.
+              </p>
+              <p class="section-body reveal" style="margin-top:1rem;">
+                We can observe their surface temperature, luminosity, radius, and the measurements of ones absoulte magnituide from Earth 
+                which incoorerates into our model. Deep learning has become a way for us to solve this classification task derived from 
+                such feature sets.
+                ...Something about the deep learning models.
+              </p>
+            </div>
+            <div class="about-right">
+                <div class="stat-row reveal">
+                  <div class="stat-card">
+                    <span class="stat-num">50+</span>
+                    <span class="stat-label">Star Classes</span>
+                    </div>
+                  <div class="stat-card">
+                    <span class="stat-num">2</span>
+                    <span class="stat-label">ML Models</span>
+                  </div>
+                  <div class="stat-card">
+                    <span class="stat-num">4</span>
+                    <span class="stat-label">Team Members</span>
+                  </div>
+                  <!-- End of cards -->
+                </div>
+                <div style="margin-top:2.5rem;" class="reveal">
+                    <p class="section-label">Team</p>
+                    <ul class="team-list">
+                      <li>Jacob Canada</li>
+                      <li>Alykaa Salaah</li>
+                      <li>Idalia Martin</li>
+                      <li>Elaina Hall</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models -->
+    <section id="models">
+        <div class="container">
+          <div class="models-intro">
+            <div>
+              <p class="section-label reveal">Architecture</p>
+              <h2 class="section-title reveal">Two models,<br/><em>compared</em></h2>
+            </div>
+            <div>
+              <p class="section-body reveal">
+                We train and evaluate two distinct deep learning architectures on the same cleaned dataset. 
+                Comparing them reveals which design choices produce the most accurate and generalizable stellar classification.
+              </p>
+            </div>
+          </div>
+
+          <div class="model-cards">
+
+            <!-- Model 1 -->
+
+          </div>
+          <div class="model-card gold reveal">
+            <span class="model-tag gold">Model 01</span>
+            <h3 class="model-name">?<br/>Name for Model 1</h3>
+            <p class="model-desc">
+                ... Stuff on the Model 1 ...
+            </p>
+            <ul class="model-features">
+              <li>...</li>
+            </ul>
+            <div class="accuracy-wrap">
+              <div class="accuracy-label">
+                <span>Validation Accuracy</span>
+                <span class="acc-label-1">—</span>
+              </div>
+              <div class="accuracy-track">
+                <div class="accuracy-fill acc-fill-1" data-target="88"></div>
+              </div>
+            </div>
+          </div>
 
     
-    <h2>The Team</h2>
+          <!-- Model 2 -->
+
+          <div class="model-card blue reveal">
+            <span class="model-tag blue">Model 02</span>
+            <h3 class="model-name">?<br/>Name for Model 2</h3>
+            <p class="model-desc">
+                ... Stuff on the Model 2 ...
+            </p>
+            <ul class="model-features">
+              <li>...</li>
+            </ul>
+            <div class="accuracy-wrap">
+              <div class="accuracy-label">
+                <span>Validation Accuracy</span>
+                <span class="acc-label-2">—</span>
+              </div>
+              <div class="accuracy-track">
+                <div class="accuracy-fill acc-fill-2" data-target="93"></div>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- <h2>The Team</h2>
 
    
     <nav>
         <ul>
-            <li>Elina Hall</li>
+            <li>Elaina Hall</li>
             <li>Jacob Candan</li>
             <li>Idalia Martian</li>
             <li>Alykaa Salaah</li>
@@ -35,11 +191,14 @@
     <footer>
         <a>
             Thank you! </a>
-    </footer>
+    </footer> -->
 
     
     <!--  -->
 
 </body>
+
+<!-- Classes -->
+
 
 </html>
