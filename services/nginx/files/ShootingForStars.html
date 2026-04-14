@@ -1,204 +1,633 @@
 <!DOCTYPE html>
-<html lang="en"> 
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Shooting For The Stars</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shooting for the Stars — CSC 440</title>
+<!-- <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"> -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styleCopy.css">
 </head>
-
-
-<!-- Beginning -->
-
 <body>
 
-    <!-- Background canvas-->
-    <canvas id="starfield"></canvas>
-    <div class="stars"></div>
-    <div class="twinkling"></div>
-    <div class="clouds"></div>
-    
-    <!-- Navigation Bar-->
+<!-- Starfield canvas -->
+<canvas id="starfield"></canvas>
 
-        <nav>
-            <a class="nav-brand" href="#">✦ Shooting for the Stars</a>
-            <ul class="nav-links">
-              <li><a href="#about">About</a></li>
-              <li><a href="#models">Models</a></li>
-              <li><a href="#classes">Star Types</a></li>
-              <li><a href="#data">Dataset</a></li>
-              <li><a href="#timeline">Timeline</a></li>
-              <li><a href="#team">Team</a></li>
-            </ul>
-          </nav>
+<!-- Background of Body -->
+<div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
 
-    <!-- Banner -->
-    <section>
-        <div class="banner">
-            <p class="banner-head">CSC 440 · Software Engineering · Spring 2026</p>
-            <h1>Shooting for<br/>the <em>Stars</em></h1>
-            <p class="banner-sub">A deep learning web application that classifies stars by their observable properties.</p>
-    <div class="banner-btn">
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">✦ Shooting for the Stars </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#models">Models</a></li>
+    <li><a href="#classes">Star Types</a></li>
+    <li><a href="#data">Dataset</a></li>
+    <li><a href="#classifier">Classifier</a></li>
+    <li><a href="#team">The Team</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="hero">
+    <p class="hero-subtitle">CSC 440 · Software Engineering · Spring 2026</p>
+    <h1>Shooting For<br/>The <em>Stars</em></h1>
+    <p class="hero-body">A deep learning web application that classifies stars by their observable properties.</p>
+    <div class="hero-tag">
       <a class="btn btn-primary" href="#models">Explore Models</a>
       <a class="btn btn-ghost" href="#classes">Star Classifications</a>
     </div>
-    <p class="banner-team">
-        <span>Jacob Canada</span> &nbsp;·&nbsp;
-        <span>Alykaa Salaah</span> &nbsp;·&nbsp;
-        <span>Idalia Martin</span> &nbsp;·&nbsp;
-        <span>Elaina Hall</span>
-      </p>
-    </div>
-    </section>
+    <!-- banner-team -->
+    <p class="hero-team">
+      <span>Jacob Canada</span> &nbsp;·&nbsp;
+      <span>Alykaa Salaah</span> &nbsp;·&nbsp;
+      <span>Idalia Martin</span> &nbsp;·&nbsp;
+      <span>Elaina Hall</span>
+    </p>
+  </div>
+</section>
 
-    <!-- End of Banner -->
-    <div class="divider"></div>
+<div class="divider"></div>
 
-    <!-- About -->
-    <section id="about">
-        <div class="container">
-          <div class="about-grid">
-            <div>
-              <p class="section-label reveal">Project Overview</p>
-              <h2 class="section-title reveal">Deep learning meets<br/><em>ancient science</em></h2>
-              <p class="section-body reveal">
-                Astronomy is one of humanity's oldest pursuits. Yet terms like "main sequence," "white dwarf," and "red giant" 
-                remain opaque to most. This project bridges that gap as users are able to observe stellar parameters and receive a clear and
-                explained classification.
-              </p>
-              <p class="section-body reveal" style="margin-top:1rem;">
-                We can observe their surface temperature, luminosity, radius, and the measurements of ones absoulte magnituide from Earth 
-                which incoorerates into our model. Deep learning has become a way for us to solve this classification task derived from 
-                such feature sets.
-                ...Something about the deep learning models.
-              </p>
-            </div>
-            <div class="about-right">
-                <div class="stat-row reveal">
-                  <div class="stat-card">
-                    <span class="stat-num">50+</span>
-                    <span class="stat-label">Star Classes</span>
-                    </div>
-                  <div class="stat-card">
-                    <span class="stat-num">2</span>
-                    <span class="stat-label">ML Models</span>
-                  </div>
-                  <div class="stat-card">
-                    <span class="stat-num">4</span>
-                    <span class="stat-label">Team Members</span>
-                  </div>
-                  <!-- End of cards -->
-                </div>
-                <div style="margin-top:2.5rem;" class="reveal">
-                    <p class="section-label">Team</p>
-                    <ul class="team-list">
-                      <li>Jacob Canada</li>
-                      <li>Alykaa Salaah</li>
-                      <li>Idalia Martin</li>
-                      <li>Elaina Hall</li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="section-label reveal">Project Overview</p>
+        <h2 class="section-title reveal">Deep learning meets<br/><em>ancient science</em></h2>
+        <p class="section-body reveal">
+            Astronomy is one of humanity's oldest pursuits. Yet terms like "main sequence," "white dwarf," and "red giant" 
+            remain opaque to most. This project bridges that gap as users are able to observe stellar parameters and receive a clear and
+            explained classification.
+        </p>
+        <p class="section-body reveal" style="margin-top:1rem;">
+            We can observe their surface temperature, luminosity, radius, and the measurements of ones absoulte magnituide from Earth 
+            which incoorerates into our model. Deep learning has become a way for us to solve this classification task derived from 
+            such feature sets.
+            ...Something about the deep learning models.
+        </p>
+      </div>
+      <div class="about-right">
+        <div class="stat-row reveal">
+          <div class="stat-card">
+            <span class="stat-num">6</span>
+            <span class="stat-label">Star Classes</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">2</span>
+            <span class="stat-label">ML Models</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">4</span>
+            <span class="stat-label">Team Members</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Models -->
-    <section id="models">
-        <div class="container">
-          <div class="models-intro">
-            <div>
-              <p class="section-label reveal">Architecture</p>
-              <h2 class="section-title reveal">Two models,<br/><em>compared</em></h2>
-            </div>
-            <div>
-              <p class="section-body reveal">
-                We train and evaluate two distinct deep learning architectures on the same cleaned dataset. 
-                Comparing them reveals which design choices produce the most accurate and generalizable stellar classification.
-              </p>
-            </div>
-          </div>
-
-          <div class="model-cards">
-
-            <!-- Model 1 -->
-
-          </div>
-          <div class="model-card gold reveal">
-            <span class="model-tag gold">Model 01</span>
-            <h3 class="model-name">?<br/>Name for Model 1</h3>
-            <p class="model-desc">
-                ... Stuff on the Model 1 ...
-            </p>
-            <ul class="model-features">
-              <li>...</li>
-            </ul>
-            <div class="accuracy-wrap">
-              <div class="accuracy-label">
-                <span>Validation Accuracy</span>
-                <span class="acc-label-1">—</span>
-              </div>
-              <div class="accuracy-track">
-                <div class="accuracy-fill acc-fill-1" data-target="88"></div>
-              </div>
-            </div>
-          </div>
-
-    
-          <!-- Model 2 -->
-
-          <div class="model-card blue reveal">
-            <span class="model-tag blue">Model 02</span>
-            <h3 class="model-name">?<br/>Name for Model 2</h3>
-            <p class="model-desc">
-                ... Stuff on the Model 2 ...
-            </p>
-            <ul class="model-features">
-              <li>...</li>
-            </ul>
-            <div class="accuracy-wrap">
-              <div class="accuracy-label">
-                <span>Validation Accuracy</span>
-                <span class="acc-label-2">—</span>
-              </div>
-              <div class="accuracy-track">
-                <div class="accuracy-fill acc-fill-2" data-target="93"></div>
-              </div>
-            </div>
-          </div>
-    
+        <div style="margin-top:2.5rem;" class="reveal">
+          <p class="section-label">Team</p>
+          <ul class="team-list">
+            <li>Jacob Canada</li>
+            <li>Alykaa Salaah</li>
+            <li>Idalia Martin</li>
+            <li>Elaina Hall</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    
-    <!-- <h2>The Team</h2>
+<!-- ─── MODELS ────────────────────────────────────────────── -->
+<section id="models">
+  <div class="container">
+    <div class="models-intro">
+      <div>
+        <p class="section-label reveal">Architecture</p>
+        <h2 class="section-title reveal">Two models,<br/><em>compared</em></h2>
+      </div>
+      <div>
+        <p class="section-body reveal">
+            We train and evaluate two distinct deep learning architectures on the same cleaned dataset. 
+            Comparing them reveals which design choices produce the most accurate and generalizable stellar classification.
+        </p>
+      </div>
+    </div>
 
-   
-    <nav>
-        <ul>
-            <li>Elaina Hall</li>
-            <li>Jacob Candan</li>
-            <li>Idalia Martian</li>
-            <li>Alykaa Salaah</li>
+    <div class="model-cards">
+
+      <!-- Model 1 -->
+      <div class="model-card gold reveal">
+        <span class="model-tag gold">Model 01</span>
+        <h3 class="model-name">Decision<br/>Tree</h3>
+        <p class="model-desc">
+          A supervised learning algorithim that models decisions and their possible consquences
+          in a hierarcheal, tree like structure.
+        </p>
+        <ul class="model-features">
+          <li>Can you please list out the features used here...</li>
+          <li></li>
+          <li></li>
         </ul>
-    </nav>
+        <!-- I feel like we should add accuracy from our model that way we can give a garentee to users of our valid information. I am sure the Professor discussed this in class but I am forgetting what terminology this is. -->
+        <div class="accuracy-wrap">
+          <div class="accuracy-label">
+            <span>Validation Accuracy</span> 
+            <span class="acc-label-1">—</span>
+          </div>
+          <div class="accuracy-track">
+            <!-- Change this number if wanting to change accuracy precentage -->
+            <div class="accuracy-fill acc-fill-1" data-target="88"></div>
+          </div>
+        </div>
+      </div>
 
+      <!-- Model 2 -->
+      <div class="model-card blue reveal">
+        <span class="model-tag blue">Model 02</span>
+        <h3 class="model-name">Feedforward<br/>Nerual Network (MLP)</h3>
+        <p class="model-desc">
+          Consistant of three layers (input, hidden layer, and output) of nodes, implementing each node uses 
+          nonlinear activation functions.
+        </p>
+        <ul class="model-features">
+          <li>Can you please list out the features used here...</li>
+          <li></li>
+        </ul>
+        <div class="accuracy-wrap">
+          <div class="accuracy-label">
+            <span>Validation Accuracy</span>
+            <span class="acc-label-2">—</span>
+          </div>
+          <div class="accuracy-track">
+            <!-- Change this number if wanting to change accuracy precentage -->
+            <div class="accuracy-fill acc-fill-2" data-target="93"></div>
+          </div>
+        </div>
+      </div>
 
-    <footer>
-        <a>
-            Thank you! </a>
-    </footer> -->
+    </div>
+  </div>
+</section>
 
-    
-    <!--  -->
+<!-- STELLAR CLASSES -->
+<section id="classes">
+  <div class="container">
+    <div class="classes-header">
+      <div>
+        <p class="section-label reveal">Classification</p>
+        <h2 class="section-title reveal">The stellar<br/><em>classes</em></h2>
+      </div>
+      <p class="section-body reveal">
+        Stars are classified by their spectral properties. This directly indicates to surface tempature and atmospheric composistion.
+        The symbols below represents the primary system used in order to determine a stars tempeture. <em>Blue</em> being the hottest, <em>Red</em>  being 
+        the coolest. This is known as the Harvard spectrual classification.
+      </p>
+    </div>
 
+    <div class="class-grid reveal">
+      <div class="class-item cls-o">
+        <div class="class-symbol">O</div>
+        <div class="class-name">Blue Supergiant</div>
+        <div class="class-desc">The hottest, most massive stars. Extremely rare, burning through their fuel in mere millions of years.</div>
+        <div class="class-temp">&gt; 30,000 K</div>
+      </div>
+      <div class="class-item cls-b">
+        <div class="class-symbol">B</div>
+        <div class="class-name">Blue-White Giant</div>
+        <div class="class-desc">Very luminous stars with strong helium absorption lines. Often found in stellar associations.</div>
+        <div class="class-temp">10,000 – 30,000 K</div>
+      </div>
+      <div class="class-item cls-a">
+        <div class="class-symbol">A</div>
+        <div class="class-name">White Star</div>
+        <div class="class-desc">Prominent hydrogen Balmer absorption lines. Sirius and Vega are familiar class A stars.</div>
+        <div class="class-temp">7,500 – 10,000 K</div>
+      </div>
+      <div class="class-item cls-f">
+        <div class="class-symbol">F</div>
+        <div class="class-name">Yellow-White Star</div>
+        <div class="class-desc">Slightly cooler than A-class, showing ionized calcium lines. Polaris belongs here.</div>
+        <div class="class-temp">6,000 – 7,500 K</div>
+      </div>
+      <div class="class-item cls-g">
+        <div class="class-symbol">G</div>
+        <div class="class-name">Yellow Dwarf</div>
+        <div class="class-desc">Main sequence stars like our Sun. Balanced hydrogen and metal absorption lines.</div>
+        <div class="class-temp">5,200 – 6,000 K</div>
+      </div>
+      <div class="class-item cls-k">
+        <div class="class-symbol">K</div>
+        <div class="class-name">Orange Dwarf</div>
+        <div class="class-desc">Cooler than the Sun, stable and long-lived. Strong candidates for hosting habitable planets.</div>
+        <div class="class-temp">3,700 – 5,200 K</div>
+      </div>
+      <div class="class-item cls-m">
+        <div class="class-symbol">M</div>
+        <div class="class-name">Red Dwarf</div>
+        <div class="class-desc">The most common type in the galaxy. Very low mass, long-lived, with molecular absorption bands.</div>
+        <div class="class-temp">2,400 – 3,700 K</div>
+      </div>
+      <div class="class-item cls-wd">
+        <div class="class-symbol">WD</div>
+        <div class="class-name">White Dwarf</div>
+        <div class="class-desc">The dense remnant of a low-to-medium mass star after shedding its outer layers. Earth-sized but very massive.</div>
+        <div class="class-temp">8,000 – 40,000 K</div>
+      </div>
+      <div class="class-item cls-ns">
+        <div class="class-symbol">NS</div>
+        <div class="class-name">Neutron Star</div>
+        <div class="class-desc">Collapsed core of a massive star after a supernova. Incredibly dense — a teaspoon would weigh billions of tons.</div>
+        <div class="class-temp">&gt; 10<sup>6</sup> K (surface)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATASET -->
+<section id="data">
+  <div class="container">
+    <div class="data-layout">
+      <div>
+        <p class="section-label reveal">Foundation</p>
+        <h2 class="section-title reveal">Data<br/><em>preparation</em></h2>
+        <p class="section-body reveal">The dataset is sourced, cleaned, and structured specifically for this classification task. 
+            Each record pairs observable stellar measurements with a verified spectral class label.</p><br>
+        <!-- <div class="pipeline-steps reveal">
+          <div class="pipeline-step">
+            <span class="step-num">1</span>
+            <div class="step-content">
+              <div class="step-title">Acquisition</div>
+              <div class="step-desc">Collect publicly available stellar catalogs with labeled spectral classes and physical parameters.</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <span class="step-num">2</span>
+            <div class="step-content">
+              <div class="step-title">Cleaning</div>
+              <div class="step-desc">Remove duplicates, handle missing values, and standardize units across catalog sources.</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <span class="step-num">3</span>
+            <div class="step-content">
+              <div class="step-title">Normalization</div>
+              <div class="step-desc">Scale features to comparable ranges; apply log-transform to luminosity and radius.</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <span class="step-num">4</span>
+            <div class="step-content">
+              <div class="step-title">Train / Test Split</div>
+              <div class="step-desc">Stratified 80/20 split preserves class distribution across both sets.</div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="reveal">
+        <p class="section-label" style="margin-top:.2rem;">Input Features</p>
+        <div class="feature-table">
+          <div class="feature-row header">
+            <div class="feature-cell">Feature</div>
+            <div class="feature-cell">Unit</div>
+            <div class="feature-cell">Description</div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-cell"><code>temperature</code></div>
+            <div class="feature-cell">Kelvin (K)</div>
+            <div class="feature-cell">Surface effective temperature</div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-cell"><code>luminosity</code></div>
+            <div class="feature-cell">L☉</div>
+            <div class="feature-cell">Brightness relative to the Sun</div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-cell"><code>radius</code></div>
+            <div class="feature-cell">R☉</div>
+            <div class="feature-cell">Stellar radius relative to the Sun</div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-cell"><code>abs_magnitude</code></div>
+            <div class="feature-cell">Mag</div>
+            <div class="feature-cell">Absolute visual magnitude</div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-cell"><code>spectral_class</code></div>
+            <div class="feature-cell">—</div>
+            <div class="feature-cell">Subclass within the spectral type</div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-cell"><code>color</code></div>
+            <div class="feature-cell">—</div>
+            <div class="feature-cell">Observed color (B–V index)</div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-cell"><code>star_type</code></div>
+            <div class="feature-cell">—</div>
+            <div class="feature-cell"><strong>Target label</strong> (0–5)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CLASSIFIER ──────────────────────────────────────────── -->
+<div class="divider"></div>
+<section id="classifier">
+    <div class="container">
+        <div class="classifier-intro">
+            <p class="section-label reveal">Try It</p>
+            <h2 class="section-title reveal">Classify a <em>Star</em></h2>
+            <p class="section-body reveal">Enter the observable properties of a star and our model will predict its stellar classification.</p>
+        </div>
+
+        <div class="classifier-layout">
+
+            <!-- Form -->
+            <form class="classifier-form reveal" id="classifierForm">
+
+                <!-- Temperature -->
+                <div class="field-group">
+                    <label class="field-label" for="temperature">
+                        Effective Surface Temperature
+                        <span class="field-unit">Kelvin (K)</span>
+                    </label>
+                    <p class="field-desc">The temperature of the star's outer surface layer.</p>
+                    <input class="field-input" type="number" id="temperature" name="temperature" placeholder="e.g. 5778" required />
+                </div>
+
+                <!-- Luminosity -->
+                <div class="field-group">
+                    <label class="field-label" for="luminosity">
+                        Luminosity
+                        <span class="field-unit">Solar Luminosities (L☉)</span>
+                    </label>
+                    <p class="field-desc">The total brightness of the star relative to our Sun.</p>
+                    <input class="field-input" type="number" id="luminosity" name="luminosity" placeholder="e.g. 1.0" step="any" required />
+                </div>
+
+                <!-- Radius -->
+                <div class="field-group">
+                    <label class="field-label" for="radius">
+                        Radius
+                        <span class="field-unit">Solar Radii (R☉)</span>
+                    </label>
+                    <p class="field-desc">The physical size of the star relative to our Sun.</p>
+                    <input class="field-input" type="number" id="radius" name="radius" placeholder="e.g. 1.0" step="any" required />
+                </div>
+
+                <!-- Magnitude -->
+                <div class="field-group">
+                    <label class="field-label" for="magnitude">
+                        Absolute Magnitude
+                        <span class="field-unit">Absolute V Magnitude (Mv)</span>
+                    </label>
+                    <p class="field-desc">The brightness of the star measured in visible light only.</p>
+                    <input class="field-input" type="number" id="magnitude" name="magnitude" placeholder="e.g. 4.83" step="any" required />
+                </div>
+
+                <!-- Color -->
+                <div class="field-group">
+                    <label class="field-label" for="color">
+                        Color
+                        <span class="field-unit">Observed Star Color</span>
+                    </label>
+                    <p class="field-desc">The visible color of the star as observed from Earth.</p>
+                    <select class="field-input field-select" id="color" name="color" required>
+                        <option value="" disabled selected>Select a color</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Blue-White">Blue-White</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Orange-Red">Orange-Red</option>
+                        <option value="Red">Red</option>
+                        <option value="White">White</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Yellow-White">Yellow-White</option>
+                    </select>
+                </div>
+
+                <!-- Spectral Class -->
+                <div class="field-group">
+                    <label class="field-label" for="class">
+                        Spectral Type
+                        <span class="field-unit">Morgan–Keenan Class</span>
+                    </label>
+                    <p class="field-desc">The spectral classification based on the star's absorption lines.</p>
+                    <select class="field-input field-select" id="class" name="class" required>
+                        <option value="" disabled selected>Select a spectral type</option>
+                        <option value="O">O — Blue Supergiant</option>
+                        <option value="B">B — Blue-White Giant</option>
+                        <option value="A">A — White Star</option>
+                        <option value="F">F — Yellow-White Star</option>
+                        <option value="G">G — Yellow Dwarf</option>
+                        <option value="K">K — Orange Dwarf</option>
+                        <option value="M">M — Red Dwarf</option>
+                    </select>
+                </div>
+
+                <!-- MLP Checkbox -->
+                <div class="field-group">
+                    <span class="field-label">Model Selection</span>
+                    <p class="field-desc">Check the box to use the MLP Neural Network. Leave unchecked to use the Decision Tree.</p>
+                    <label class="checkbox-row">
+                        <input type="checkbox" id="mlp" name="mlp" value="true" />
+                        <span class="checkbox-box"></span>
+                        <span class="checkbox-label">Use MLP Neural Network</span>
+                    </label>
+                </div>
+
+                <button class="btn btn-primary submit-btn" type="submit">Classify Star</button>
+            </form>
+
+            <!-- Result Panel -->
+            <div class="result-panel reveal" id="resultPanel">
+
+                <div class="result-empty" id="resultEmpty">
+                    <div class="result-empty-icon">✦</div>
+                    <p>Your classification result will appear here after submitting the form.</p>
+                </div>
+
+                <div class="result-loading" id="resultLoading" style="display:none;">
+                    <div class="loading-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <p>Analyzing stellar parameters…</p>
+                </div>
+
+                <div class="result-filled" id="resultFilled" style="display:none;">
+                    <p class="result-eyebrow">Classification Result</p>
+                    <h3 class="result-type" id="resultType">—</h3>
+                    <p class="result-desc" id="resultDesc">—</p>
+                    <div class="result-meta" id="resultMeta"></div>
+                    <div class="result-error" id="resultError" style="display:none;">
+                        <p id="resultErrorMsg">Something went wrong. Please try again.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section id="timeline"> -->
+  <!-- <div class="container">
+    <div class="timeline-header">
+      <p class="section-label reveal">Schedule</p>
+      <h2 class="section-title reveal">Project<br/><em>timeline</em></h2>
+    </div>
+    <div class="timeline-track">
+      <div class="timeline-item reveal">
+        <div class="timeline-week">Weeks 8 – 10</div>
+        <div class="timeline-task"><strong>Dataset creation & cleaning</strong> — source, standardize, and validate the stellar catalog. Document all preprocessing decisions.</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-week">Weeks 8 – 12</div>
+        <div class="timeline-task"><strong>ML model training & refinement</strong> — implement both architectures, compare accuracy, tune hyperparameters, and select the best performer.</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-week">Weeks 8 – 12</div>
+        <div class="timeline-task"><strong>Frontend development</strong> — build the web application interface using JavaScript, ensuring an intuitive user experience for star classification input and output.</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-week">Weeks 12 – 14</div>
+        <div class="timeline-task"><strong>Model selection & integration</strong> — connect the chosen Python ML model to the JavaScript frontend via a backend API layer.</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-week">Week 13</div>
+        <div class="timeline-task"><strong>Backend & dataset documentation</strong> — document the full pipeline, API contract, and data lineage for reproducibility.</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-week">Weeks 13 – 14</div>
+        <div class="timeline-task"><strong>Presentation & demo</strong> — develop final slides and a live demo of the web application for delivery and evaluation.</div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ─── TEAM ──────────────────────────────────────────────── -->
+<section id="team">
+  <div class="container">
+    <p class="section-label reveal">Contributors</p>
+    <h2 class="section-title reveal">The <em>team</em></h2>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-avatar">JC</div>
+        <div class="team-name">Jacob Canada</div>
+        <div class="team-role">ML · Backend</div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-avatar">AS</div>
+        <div class="team-name">Alykaa Salaah</div>
+        <div class="team-role">Frontend · Integration</div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-avatar">IM</div>
+        <div class="team-name">Idalia Martin</div>
+        <div class="team-role">Data · ML</div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-avatar">EH</div>
+        <div class="team-name">Elaina Hall</div>
+        <div class="team-role">Docs · Data</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">✦ Shooting for the Stars </span>
+  <span class="footer-copy">CSC 440 · Software Engineering · Spring 2026</span>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// STARFEILD FUNCTIONALITY
+(function(){
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+  let W, H, stars = [];
+
+  function resize(){
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initStars(){
+    stars = [];
+    const n = Math.floor((W * H) / 4200);
+    for(let i=0; i<n; i++){
+      stars.push({
+        x: Math.random()*W,
+        y: Math.random()*H,
+        r: Math.random()*1.1+.15,
+        a: Math.random(),
+        speed: Math.random()*.0003+.0001,
+        phase: Math.random()*Math.PI*2
+      });
+    }
+  }
+
+  let t = 0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    t += .016;
+    for(const s of stars){
+      const alpha = s.a * (.5 + .5*Math.sin(t*s.speed*300 + s.phase));
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(200,215,255,${alpha})`;
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', ()=>{ resize(); initStars(); });
+  resize(); initStars(); draw();
+})();
+
+// SCROLL REVEAL
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if(e.isIntersecting){
+      setTimeout(()=> e.target.classList.add('visible'), i*60);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+
+// ACCURACY BARS
+function animateAccuracy(){
+  document.querySelectorAll('.accuracy-fill').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight){
+      el.style.width = target + '%';
+      const labelClass = el.classList.contains('acc-fill-1') ? '.acc-label-1' : '.acc-label-2';
+      const label = document.querySelector(labelClass);
+      if(label && label.textContent === '—'){
+        let current = 0;
+        const step = () => {
+          current = Math.min(current + 1.2, target);
+          label.textContent = Math.round(current) + '%';
+          if(current < target) requestAnimationFrame(step);
+        };
+        step();
+      }
+    }
+  });
+}
+window.addEventListener('scroll', animateAccuracy, {passive:true});
+setTimeout(animateAccuracy, 800);
+</script>
 </body>
-
-<!-- Classes -->
-
-
 </html>
