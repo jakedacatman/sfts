@@ -36,7 +36,7 @@
   <div class="hero">
     <p class="hero-subtitle">CSC 440 · Software Engineering · Spring 2026</p>
     <h1>Shooting For<br/>The <em>Stars</em></h1>
-    <p class="hero-body">A deep learning web application that classifies stars by their observable properties.</p>
+    <p class="hero-body">A machine learning web application that classifies stars by their observable properties.</p>
     <div class="hero-tag">
       <a class="btn btn-primary" href="#models">Explore Models</a>
       <a class="btn btn-ghost" href="#classes">Star Classifications</a>
@@ -59,17 +59,15 @@
     <div class="about-grid">
       <div>
         <p class="section-label reveal">Project Overview</p>
-        <h2 class="section-title reveal">Deep learning meets<br/><em>ancient science</em></h2>
+        <h2 class="section-title reveal">Machine learning meets<br/><em>ancient science</em></h2>
         <p class="section-body reveal">
             Astronomy is one of humanity's oldest pursuits. Yet terms like "main sequence," "white dwarf," and "red giant" 
             remain opaque to most. This project bridges that gap as users are able to observe stellar parameters and receive a clear and
             explained classification.
         </p>
         <p class="section-body reveal" style="margin-top:1rem;">
-            We can observe their surface temperature, luminosity, radius, and the measurements of ones absoulte magnituide from Earth 
-            which incoorerates into our model. Deep learning has become a way for us to solve this classification task derived from 
-            such feature sets.
-            ...Something about the deep learning models.
+            We can observe or calculate their surface temperature, luminosity, radius, and absolute magnitude, and these are excellent parameters to use for classification. Machine learning has become a way for us to solve this classification task derived from 
+            such a feature set. We used two types of machine learning models: a decision tree and a multi-layer perceptron.
         </p>
       </div>
       <div class="about-right">
@@ -111,7 +109,7 @@
       </div>
       <div>
         <p class="section-body reveal">
-            We train and evaluate two distinct deep learning architectures on the same cleaned dataset. 
+            We train and evaluate two distinct machine learning architectures on the same cleaned dataset. 
             Comparing them reveals which design choices produce the most accurate and generalizable stellar classification.
         </p>
       </div>
@@ -127,11 +125,7 @@
           A supervised learning algorithm that models decisions and their possible consequences
           in a hierarchical, tree-like structure. It is similar to a flow-chart.
         </p>
-        <ul class="model-features">
-          <li>Can you please list out the features used here...</li>
-          <li></li>
-          <li></li>
-        </ul>
+        <img src="photos/decision_tree.png" style="height: auto; width:100%;"></img>
         <!-- I feel like we should add accuracy from our model that way we can give a garentee to users of our valid information. I am sure the Professor discussed this in class but I am forgetting what terminology this is. -->
         <div class="accuracy-wrap">
           <div class="accuracy-label">
@@ -152,10 +146,7 @@
         <p class="model-desc">
           Consists of three layers—input, hidden layer, and output—of neurons, each with its own weights and activation function.
         </p>
-        <ul class="model-features">
-          <li>Can you please list out the features used here...</li>
-          <li></li>
-        </ul>
+        <img src="photos/mlp.png" style="height: auto; width:100%;"></img>
         <div class="accuracy-wrap">
           <div class="accuracy-label">
             <span>Test Accuracy</span>
@@ -516,7 +507,7 @@
       <div class="team-card reveal">
         <div class="team-avatar">JC</div>
         <div class="team-name">Jacob Canada</div>
-        <div class="team-role">ML · Backend</div>
+        <div class="team-role">Backend · Integration</div>
       </div>
       <div class="team-card reveal">
         <div class="team-avatar">AS</div>
@@ -531,7 +522,7 @@
       <div class="team-card reveal">
         <div class="team-avatar">EH</div>
         <div class="team-name">Elaina Hall</div>
-        <div class="team-role">Docs · Data</div>
+        <div class="team-role">Docs · Data · ML</div>
       </div>
     </div>
   </div>
