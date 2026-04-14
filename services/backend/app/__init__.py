@@ -56,20 +56,20 @@ def test():
 
 @app.route("/api/identify", methods = ["POST"])
 def identify():
-    form = request.form
+    form = request.json
     X = [ form["temperature"], form["luminosity"], form["radius"], form["magnitude"] ]
     result = None
-    if form["mlp"] == False or form["mlp"] == "":    
+    if "mlp" not in form:
         X.extend(colors[form["color"]])
         X.extend(spectral_classes[form["class"]])
+        
         X = np.array(X).reshape(1, -1)
-        #print(X, X.shape)
         result = model_tree.predict(X)[0]
     else:
         X.extend([form["color"]])
         X.append(form["class"])
+
         X = np.array(X).reshape(1, -1)
-        #print(X, X.shape)
         X = pd.DataFrame(
                 data = X,
                 index = [ 0 ],

@@ -6,7 +6,7 @@
 <title>Shooting for the Stars — CSC 440</title>
 <!-- <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"> -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="styleCopy.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -124,8 +124,8 @@
         <span class="model-tag gold">Model 01</span>
         <h3 class="model-name">Decision<br/>Tree</h3>
         <p class="model-desc">
-          A supervised learning algorithim that models decisions and their possible consquences
-          in a hierarcheal, tree like structure.
+          A supervised learning algorithm that models decisions and their possible consequences
+          in a hierarchical, tree-like structure. It is similar to a flow-chart.
         </p>
         <ul class="model-features">
           <li>Can you please list out the features used here...</li>
@@ -135,12 +135,12 @@
         <!-- I feel like we should add accuracy from our model that way we can give a garentee to users of our valid information. I am sure the Professor discussed this in class but I am forgetting what terminology this is. -->
         <div class="accuracy-wrap">
           <div class="accuracy-label">
-            <span>Validation Accuracy</span> 
+            <span>Test Accuracy</span> 
             <span class="acc-label-1">—</span>
           </div>
           <div class="accuracy-track">
             <!-- Change this number if wanting to change accuracy precentage -->
-            <div class="accuracy-fill acc-fill-1" data-target="88"></div>
+            <div class="accuracy-fill acc-fill-1" data-target="100"></div>
           </div>
         </div>
       </div>
@@ -148,10 +148,9 @@
       <!-- Model 2 -->
       <div class="model-card blue reveal">
         <span class="model-tag blue">Model 02</span>
-        <h3 class="model-name">Feedforward<br/>Nerual Network (MLP)</h3>
+        <h3 class="model-name">Multi-Layer<br/>Perceptron (MLP)</h3>
         <p class="model-desc">
-          Consistant of three layers (input, hidden layer, and output) of nodes, implementing each node uses 
-          nonlinear activation functions.
+          Consists of three layers—input, hidden layer, and output—of neurons, each with its own weights and activation function.
         </p>
         <ul class="model-features">
           <li>Can you please list out the features used here...</li>
@@ -159,12 +158,12 @@
         </ul>
         <div class="accuracy-wrap">
           <div class="accuracy-label">
-            <span>Validation Accuracy</span>
+            <span>Test Accuracy</span>
             <span class="acc-label-2">—</span>
           </div>
           <div class="accuracy-track">
             <!-- Change this number if wanting to change accuracy precentage -->
-            <div class="accuracy-fill acc-fill-2" data-target="93"></div>
+            <div class="accuracy-fill acc-fill-2" data-target="100"></div>
           </div>
         </div>
       </div>
@@ -179,12 +178,11 @@
     <div class="classes-header">
       <div>
         <p class="section-label reveal">Classification</p>
-        <h2 class="section-title reveal">The stellar<br/><em>classes</em></h2>
+        <h2 class="section-title reveal">The spectral<br/><em>types</em></h2>
       </div>
       <p class="section-body reveal">
-        Stars are classified by their spectral properties. This directly indicates to surface tempature and atmospheric composistion.
-        The symbols below represents the primary system used in order to determine a stars tempeture. <em>Blue</em> being the hottest, <em>Red</em>  being 
-        the coolest. This is known as the Harvard spectrual classification.
+        One way to classify stars is to look at their spectra—the different colors of light that they emit and absorb. This directly corellates to surface temperature and atmospheric composition.
+        The symbols below represents the primary system used to classify stars in this way. This system is known as the Harvard spectral classification.
       </p>
     </div>
 
@@ -198,7 +196,7 @@
       <div class="class-item cls-b">
         <div class="class-symbol">B</div>
         <div class="class-name">Blue-White Giant</div>
-        <div class="class-desc">Very luminous stars with strong helium absorption lines. Often found in stellar associations.</div>
+        <div class="class-desc">Very luminous stars with strong helium absorption lines. Often found in stellar associations, which are a type of star cluster.</div>
         <div class="class-temp">10,000 – 30,000 K</div>
       </div>
       <div class="class-item cls-a">
@@ -234,13 +232,13 @@
       <div class="class-item cls-wd">
         <div class="class-symbol">WD</div>
         <div class="class-name">White Dwarf</div>
-        <div class="class-desc">The dense remnant of a low-to-medium mass star after shedding its outer layers. Earth-sized but very massive.</div>
+        <div class="class-desc">The dense remnant of a low-to-medium mass star after it dies and sheds its outer layers. Earth-sized but very massive.</div>
         <div class="class-temp">8,000 – 40,000 K</div>
       </div>
       <div class="class-item cls-ns">
         <div class="class-symbol">NS</div>
         <div class="class-name">Neutron Star</div>
-        <div class="class-desc">Collapsed core of a massive star after a supernova. Incredibly dense — a teaspoon would weigh billions of tons.</div>
+        <div class="class-desc">Collapsed core of a massive star after a supernova. Incredibly dense—a teaspoon would weigh billions of tons.</div>
         <div class="class-temp">&gt; 10<sup>6</sup> K (surface)</div>
       </div>
     </div>
@@ -255,7 +253,7 @@
         <p class="section-label reveal">Foundation</p>
         <h2 class="section-title reveal">Data<br/><em>preparation</em></h2>
         <p class="section-body reveal">The dataset is sourced, cleaned, and structured specifically for this classification task. 
-            Each record pairs observable stellar measurements with a verified spectral class label.</p><br>
+            Each record pairs observable stellar measurements with a verified stellar class label.</p><br>
         <!-- <div class="pipeline-steps reveal">
           <div class="pipeline-step">
             <span class="step-num">1</span>
@@ -312,7 +310,7 @@
             <div class="feature-cell">Stellar radius relative to the Sun</div>
           </div>
           <div class="feature-row">
-            <div class="feature-cell"><code>abs_magnitude</code></div>
+            <div class="feature-cell"><code>magnitude</code></div>
             <div class="feature-cell">Mag</div>
             <div class="feature-cell">Absolute visual magnitude</div>
           </div>
@@ -324,7 +322,7 @@
           <div class="feature-row">
             <div class="feature-cell"><code>color</code></div>
             <div class="feature-cell">—</div>
-            <div class="feature-cell">Observed color (B–V index)</div>
+            <div class="feature-cell">Observed color</div>
           </div>
           <div class="feature-row">
             <div class="feature-cell"><code>star_type</code></div>
@@ -548,6 +546,7 @@
 </footer>
 
 <!-- SCRIPTS -->
+<script src="app.js"></script>
 <script>
 // STARFEILD FUNCTIONALITY
 (function(){
